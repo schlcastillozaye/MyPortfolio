@@ -1,126 +1,140 @@
 # Zaye's Portfolio
 
-A cute, pink, glassmorphism personal portfolio for **Kashieca Zaye Z. Castillo**.
-Built with only HTML, CSS, and vanilla JavaScript — no frameworks, no build tools.
+Built with HTML, CSS, and vanilla JavaScript—no frameworks or build tools.
 
-**Live site:** <https://schlcastillozaye.github.io/portfolio/>
-**Repository:** <https://github.com/schlcastillozaye/portfolio>
+**Live site:** https://schlcastillozaye.github.io/MyPortfolio/
+
+**Repository:** https://github.com/schlcastillozaye/MyPortfolio
 
 ---
 
-## Files
+## Project structure
 
-```
-portfolio/
-├── index.html          ← all the content lives here
-├── style.css           ← all the colors, glass effects, and layouts
-├── script.js           ← menu, theme, modal, animations
+```text
+MyPortfolio/
+├── index.html
+├── style.css
+├── script.js
 ├── assets/
-│   ├── zaye.jpg        ← your profile photo
-│   └── favicon.svg     ← the little flower in the browser tab
-└── README.md           ← this guide
+│   ├── zaye.jpg
+│   └── favicon.svg
+└── README.md
 ```
 
-To preview it on your computer:
-
-1. Open the folder in VS Code (or any editor).
-2. Double-click `index.html`, **or** run a small local server:
-
-   ```powershell
-   python -m http.server 8000
-   ```
-
-   Then open <http://localhost:8000> in your browser.
-
-Everything is relative, so it also works on GitHub Pages without changes.
+- `index.html` contains the main content.
+- `style.css` handles the colors, glass effects, and layouts.
+- `script.js` powers the menu, theme switcher, modals, and animations.
+- `assets/` stores images and icons.
 
 ---
 
-## The easiest things to edit
+## Running the project locally
 
-### 1. Your photo
+You can preview the site in two ways.
 
-Replace `assets/zaye.jpg` with your new photo, keeping the **same file name**.
-Use a square photo (roughly 800 × 800 px works nicely) and keep it under ~300 KB
-so the page stays fast. The frame crops it with `object-fit: cover`, so it will
-never stretch.
+**Option 1:** Open `index.html` directly in your browser.
 
-If the image is ever missing, the site automatically shows a pink **Z** placeholder.
+**Option 2:** Run a simple local server.
 
-### 2. Your name, intro, and bio
+```powershell
+python -m http.server 8000
+```
 
-Open `index.html`. The content is in order, with comment banners:
+Then open http://localhost:8000 in your browser.
 
-- **Hero:** look for `HOME / HERO` — the `<h1>`, `.hero-intro`, and the quick facts.
-- **About:** look for `ABOUT` — the bio paragraphs are inside `.about-body`.
-- **Quick facts:** the `facts-card` list (name, program, university, etc.).
-- **Contact:** look for `CONTACT`. Edit the GitHub links and the note.
+The project uses relative file paths, so it works on GitHub Pages without additional configuration.
 
-There is no fake email, phone number, or social link anywhere. Only real details
-you've provided are shown.
+---
 
-### 3. Your projects
+## Editing the portfolio
 
-Each project has **two places** in `index.html`:
+### Update your profile photo
 
-1. **The card** inside `<div class="projects-grid">` — title, short description,
-   tags, and status.
-2. **The hidden details** inside `<div class="project-data" hidden>` — what the
-   project does, your role, technologies, and links. These are shown in the modal.
+Replace `assets/zaye.jpg` with your new photo while keeping the same file name.
 
-They are connected by an id:
+A square image around **800 × 800 px** works best. Keeping it under **300 KB** helps the page load faster.
+
+If the image is missing, the site automatically displays a pink **Z** placeholder.
+
+### Update your name, intro, and bio
+
+Open `index.html`.
+
+The sections are organized with clear comment banners.
+
+- **Home / Hero** – edit your heading, introduction, and quick facts.
+- **About** – update your biography inside `.about-body`.
+- **Quick facts** – edit your personal information card.
+- **Contact** – update your GitHub links or future contact details.
+
+The site intentionally avoids fake emails, phone numbers, or social links.
+
+### Update your projects
+
+Each project has two connected parts inside `index.html`.
+
+1. The project card inside `projects-grid`.
+2. The hidden project details shown inside the modal.
+
+They are linked using matching IDs.
+
+Example:
 
 ```html
 <button data-project="roadwatch">View details</button>
-...
-<article id="details-roadwatch" data-title="RoadWatch" data-tags="PHP · MySQL">
+
+<article id="details-roadwatch" data-title="RoadWatch">
 ```
 
-If you add a new project, copy one card **and** one `project-detail` block, then
-give both the same new id (for example `details-myproject` and
-`data-project="myproject"`).
+When adding a new project, duplicate both sections and give them matching IDs.
 
-#### Adding a repository or live demo link
+### Add a repository or live demo
 
-Inside a project's detail block, find:
+Replace:
 
 ```html
 <span class="detail-soon">Repository link coming soon</span>
 ```
 
-Replace it with a real link:
+with:
 
 ```html
 <a class="btn btn--primary btn--small"
    href="https://github.com/your-username/your-repo"
-   target="_blank" rel="noopener noreferrer">
+   target="_blank"
+   rel="noopener noreferrer">
   View repository
 </a>
 ```
 
-Only add links you know work. The RoadWatch repository is already linked.
+Only add links that already work.
 
-### 4. Adding an email or social links
+### Add an email or social links
 
-When you're ready, replace the placeholder note in the contact section with
-something like this:
+When you're ready, add a button like this:
 
 ```html
 <a class="btn btn--ghost" href="mailto:your-email@example.com">Email me</a>
 ```
 
-For LinkedIn, add another button:
+For LinkedIn:
 
 ```html
-<a class="btn btn--ghost" href="https://www.linkedin.com/in/your-profile"
-   target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="btn btn--ghost"
+   href="https://www.linkedin.com/in/your-profile"
+   target="_blank"
+   rel="noopener noreferrer">
+  LinkedIn
+</a>
 ```
 
-Then remove the sentence about email not being available yet.
+Then remove the placeholder contact note.
 
-### 5. Colors and fonts
+---
 
-All main colors are CSS variables at the top of `style.css`:
+## Customizing the design
+
+The main colors are defined at the top of `style.css`.
 
 ```css
 :root {
@@ -128,73 +142,75 @@ All main colors are CSS variables at the top of `style.css`:
   --pink: #e58aab;
   --pink-deep: #a8446a;
   --ink: #3b2831;
-  ...
 }
 ```
 
-The dark theme is the `html[data-theme="dark"]` block right below it. Fonts are
-loaded from Google Fonts in the `<head>` of `index.html` — Quicksand for headings
-and DM Sans for body text.
+The dark theme is inside the `html[data-theme="dark"]` section.
 
-### 6. Projects, skills, and certifications
-
-All of these are plain HTML lists/cards. To add a skill, copy one `<li>` inside a
-`.chips` list. To add a certification, copy one `<li class="cert-card ...">` block.
-There are **no percentage bars** and no invented proficiency levels.
+The site uses **Quicksand** for headings and **DM Sans** for body text.
 
 ---
 
-## Interactive features (already working)
+## Updating skills and certifications
 
-- Sticky glass navigation with active-section highlighting
-- Mobile hamburger menu (closes on Escape, outside click, or link click)
-- Light / dark pink theme, remembered in `localStorage`
+The skills and certifications are simple HTML cards and lists.
+
+- Duplicate a `<li>` inside `.chips` to add another skill.
+- Duplicate a `<li class="cert-card">` block to add another certification.
+
+The portfolio intentionally avoids fake skill percentages or exaggerated proficiency levels.
+
+---
+
+## Interactive features
+
+Everything below is already working.
+
+- Sticky glass navigation with active section highlighting
+- Mobile menu with keyboard support
+- Pink light and dark mode with saved preference
 - Scroll progress bar
-- Reveal-on-scroll animations (disabled for reduced-motion users)
-- Project detail modals with keyboard support (`Esc` closes; focus returns)
+- Reveal-on-scroll animations
+- Project detail modals
 - Back-to-top button
-- Subtle cursor sparkles on desktop only (off for touch and reduced motion)
-- Automatic year in the footer
-- Photo fallback if `assets/zaye.jpg` is missing
+- Subtle desktop cursor sparkles
+- Automatic footer year
+- Profile photo fallback
 
 ---
 
-## Accessibility notes
+## Accessibility
 
-- Semantic landmarks (`header`, `nav`, `main`, `section`, `footer`)
+The portfolio includes accessibility improvements such as:
+
+- Semantic HTML landmarks
 - Skip-to-content link
-- Visible focus outlines
-- `aria-expanded` / `aria-controls` on the mobile menu
-- Native `<dialog>` element for the project modal
-- Decorative elements marked `aria-hidden`
-- Text contrast checked against both pink themes
-- All motion respects `prefers-reduced-motion`
+- Visible keyboard focus states
+- Accessible mobile navigation
+- Keyboard-friendly project modals
+- Decorative elements marked as hidden from screen readers
+- Motion that respects `prefers-reduced-motion`
 
 ---
 
-## Publishing on GitHub Pages
+## GitHub Pages deployment
 
-This site is already published from the `main` branch, root folder:
-
-**<https://schlcastillozaye.github.io/portfolio/>**
-
-The current settings are:
+The portfolio is configured to use GitHub Pages with the following settings:
 
 - **Source:** Deploy from a branch
 - **Branch:** `main`
 - **Folder:** `/ (root)`
 
-Whenever you push a change to `main`, GitHub Pages rebuilds the site
-automatically in a minute or two. There is no build step.
+Whenever you push changes to the `main` branch, GitHub Pages automatically rebuilds the site.
 
-If you ever need to set it up again, open the repository on GitHub, go to
-**Settings → Pages**, choose those settings, and save. The URL only changes if
-you rename the repository or move it to a different account.
+If you need to configure it again, open **Settings → Pages**, select those settings, and save.
+
+**Live site:** https://schlcastillozaye.github.io/MyPortfolio/
 
 ---
 
 ## A small reminder
 
-The site deliberately does **not** invent awards, work experience, testimonials,
-contact details, or repository links. Keep it that way and it will always feel
-honest — which is a much better look than a perfect-sounding template.
+This portfolio is meant to reflect real work and real progress.
+
+Instead of filling it with made-up awards, experience, testimonials, or contact details, keep it honest and update it as you grow. I think that makes it feel much more genuine than trying to make it look perfect.
