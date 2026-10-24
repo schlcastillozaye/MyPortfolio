@@ -1,37 +1,11 @@
-/* ============================================================
-   ZAYE'S PORTFOLIO — STYLES
-   ------------------------------------------------------------
-   Sections:
-     1. Theme tokens
-     2. Base & accessibility
-     3. Background decoration
-     4. Reusable pieces (wrap, glass, buttons, type)
-     5. Header & navigation
-     6. Hero & portrait
-     7. About
-     8. Skills
-     9. Projects
-    10. Education & certifications
-    11. Contact
-    12. Footer & back-to-top
-    13. Project modal
-    14. Cursor sparkles
-    15. Responsive
-   ------------------------------------------------------------
-   Tip: most colors live in the :root variables below.
-   Change those first if you want a different palette.
-   ============================================================ */
 
-/* ============================================================
-   1. THEME TOKENS
-   ============================================================ */
+
 :root {
-  /* Fonts */
+
   --font-body: "DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-display: "Quicksand", "Segoe UI", system-ui, sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
 
-  /* Core palette — light */
   --bg: #fff7fa;
   --bg-deep: #ffeef5;
   --ink: #3b2831;
@@ -45,14 +19,12 @@
   --rose: #d9a1b4;
   --white: #ffffff;
 
-  /* Glass */
   --glass: rgba(255, 255, 255, 0.56);
   --glass-strong: rgba(255, 255, 255, 0.76);
   --glass-border: rgba(255, 255, 255, 0.86);
   --glass-inner: rgba(255, 255, 255, 0.72);
   --line: rgba(168, 68, 106, 0.14);
 
-  /* Effects */
   --shadow: 0 26px 60px -30px rgba(168, 68, 106, 0.42);
   --shadow-soft: 0 16px 38px -24px rgba(168, 68, 106, 0.36);
   --shadow-pink: 0 18px 36px -18px rgba(201, 95, 134, 0.55);
@@ -61,7 +33,6 @@
   --modal-bg: rgba(255, 249, 252, 0.94);
   --menu-bg: #fffafc;
 
-  /* Layout */
   --max: 1140px;
   --radius-xl: 36px;
   --radius-lg: 28px;
@@ -101,9 +72,6 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-/* ============================================================
-   2. BASE & ACCESSIBILITY
-   ============================================================ */
 *,
 *::before,
 *::after {
@@ -219,7 +187,6 @@ em {
   transform: translateY(0);
 }
 
-/* Thin pink scrollbar (WebKit only, harmless elsewhere) */
 ::-webkit-scrollbar {
   width: 11px;
 }
@@ -238,9 +205,6 @@ em {
   background: var(--pink);
 }
 
-/* ============================================================
-   3. BACKGROUND DECORATION
-   ============================================================ */
 .backdrop {
   position: fixed;
   inset: 0;
@@ -323,7 +287,6 @@ html[data-theme="dark"] .backdrop-dots {
   to { transform: translate3d(4vmax, -3vmax, 0) scale(1.1); }
 }
 
-/* Scroll progress line */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -337,9 +300,6 @@ html[data-theme="dark"] .backdrop-dots {
   will-change: transform;
 }
 
-/* ============================================================
-   4. REUSABLE PIECES
-   ============================================================ */
 .wrap {
   width: min(100% - 3rem, var(--max));
   margin-inline: auto;
@@ -472,7 +432,6 @@ html[data-theme="dark"] .backdrop-dots {
   height: 18px;
 }
 
-/* Scroll reveal (only when JavaScript is available) */
 .js .reveal {
   opacity: 0;
   transform: translateY(26px);
@@ -487,9 +446,6 @@ html[data-theme="dark"] .backdrop-dots {
   transform: none;
 }
 
-/* ============================================================
-   5. HEADER & NAVIGATION
-   ============================================================ */
 .site-header {
   position: fixed;
   top: 0;
@@ -643,9 +599,6 @@ html[data-theme="dark"] .theme-toggle .icon--moon { display: none; }
   transform: rotate(-45deg);
 }
 
-/* ============================================================
-   6. HERO & PORTRAIT
-   ============================================================ */
 .hero {
   position: relative;
   padding-top: clamp(8rem, 13vw, 10.5rem);
@@ -755,7 +708,6 @@ html[data-theme="dark"] .theme-toggle .icon--moon { display: none; }
   color: var(--pink-strong);
 }
 
-/* --- Portrait scene --- */
 .portrait-scene {
   position: relative;
   display: grid;
@@ -926,7 +878,6 @@ html[data-theme="dark"] .portrait-fallback {
   50% { opacity: 1; transform: scale(1.15) rotate(20deg); }
 }
 
-/* --- Soft moving ribbon --- */
 .ticker {
   position: relative;
   width: 100%;
@@ -978,9 +929,6 @@ html[data-theme="dark"] .ticker {
   to { transform: translateX(-50%); }
 }
 
-/* ============================================================
-   7. ABOUT
-   ============================================================ */
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.72fr);
@@ -1058,7 +1006,6 @@ html[data-theme="dark"] .about-quote {
   opacity: 0.45;
 }
 
-/* Facts card */
 .facts-card {
   position: sticky;
   top: 110px;
@@ -1138,9 +1085,6 @@ html[data-theme="dark"] .about-quote {
   margin-right: 0.25rem;
 }
 
-/* ============================================================
-   8. SKILLS
-   ============================================================ */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1246,9 +1190,6 @@ html[data-theme="dark"] .skill-card--accent .chips li {
   color: var(--pink-strong);
 }
 
-/* ============================================================
-   9. PROJECTS
-   ============================================================ */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1516,9 +1457,6 @@ html[data-theme="dark"] .skill-card--accent .chips li {
   text-align: center;
 }
 
-/* ============================================================
-   10. EDUCATION & CERTIFICATIONS
-   ============================================================ */
 .education-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
@@ -1656,7 +1594,6 @@ html[data-theme="dark"] .skill-card--accent .chips li {
   line-height: 1.6;
 }
 
-/* Certifications */
 .cert-head h3 {
   font-size: 1.45rem;
 }
@@ -1740,9 +1677,6 @@ html[data-theme="dark"] .skill-card--accent .chips li {
   font-size: 1.1rem;
 }
 
-/* ============================================================
-   11. CONTACT
-   ============================================================ */
 .section--contact {
   padding-bottom: clamp(4rem, 8vw, 6rem);
 }
@@ -1911,6 +1845,69 @@ html[data-theme="dark"] .contact-github {
   transform: translate(2px, -2px);
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+  list-style: none;
+}
+
+.social-links li {
+  flex: 1 1 88px;
+  min-width: 0;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 0.52rem 0.5rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition:
+    transform 0.3s var(--ease),
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+html[data-theme="dark"] .social-link {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--rose);
+  background: var(--pink-wash);
+  color: var(--pink-deep);
+}
+
+.social-link-icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--gradient-pink);
+  color: #451c2b;
+  box-shadow: 0 4px 10px -6px rgba(201, 95, 134, 0.7);
+}
+
+.social-link-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
 .contact-panel-rule {
   height: 1px;
   margin: 1.1rem 0;
@@ -1935,9 +1932,6 @@ html[data-theme="dark"] .contact-github {
   flex: none;
 }
 
-/* ============================================================
-   12. FOOTER & BACK-TO-TOP
-   ============================================================ */
 .site-footer {
   padding: 1.8rem 0 2.2rem;
   border-top: 1px solid var(--glass-border);
@@ -2011,9 +2005,6 @@ html[data-theme="dark"] .site-footer {
   height: 18px;
 }
 
-/* ============================================================
-   13. PROJECT MODAL
-   ============================================================ */
 .modal {
   width: min(92vw, 660px);
   max-width: 660px;
@@ -2151,9 +2142,6 @@ body.modal-open {
   to { opacity: 1; }
 }
 
-/* ============================================================
-   14. CURSOR SPARKLES
-   ============================================================ */
 .cursor-sparkle {
   position: fixed;
   z-index: 150;
@@ -2170,9 +2158,6 @@ body.modal-open {
   100% { opacity: 0; transform: translate(-50%, -140%) scale(1.05) rotate(50deg); }
 }
 
-/* ============================================================
-   15. RESPONSIVE
-   ============================================================ */
 @media (max-width: 1020px) {
   .nav-link {
     padding: 0.55rem 0.72rem;
@@ -2297,8 +2282,6 @@ body.modal-open {
     justify-content: center;
   }
 
-  /* On phones and tablets, the photo comes first so it is visible
-     without scrolling. */
   .portrait-scene {
     order: -1;
     padding: 0.8rem 1rem 0.4rem;
@@ -2526,7 +2509,6 @@ body.modal-open {
   }
 }
 
-/* Nice hover effects only on devices that can hover */
 @media (hover: hover) and (pointer: fine) {
   .skill-card:hover {
     transform: translateY(-6px);
@@ -2559,9 +2541,6 @@ body.modal-open {
   }
 }
 
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2592,9 +2571,6 @@ body.modal-open {
   }
 }
 
-/* ============================================================
-   PRINT (a small courtesy for anyone who prints the portfolio)
-   ============================================================ */
 @media print {
   .site-header,
   .ticker,
