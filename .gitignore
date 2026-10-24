@@ -1,0 +1,7 @@
+# Keep these out of the repository
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Original photo file. The website uses assets/zaye.jpg instead.
+zaye 1x1.jpg

@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zaye Castillo — IT Student &amp; Web Developer</title>
+  <meta name="description" content="The personal portfolio of Kashieca Zaye Z. Castillo (Zaye) — a third-year BSIT student at Bulacan State University exploring web development, software development, and software testing.">
+  <meta name="author" content="Kashieca Zaye Z. Castillo">
+  <meta name="theme-color" content="#fff7fa">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zaye Castillo — IT Student &amp; Web Developer">
+  <meta property="og:description" content="A cute pink corner of the web by Zaye — BSIT student, web builder, and designer in the making.">
+  <meta property="og:url" content="https://schlcastillozaye.github.io/portfolio/">
+  <meta property="og:image" content="https://schlcastillozaye.github.io/portfolio/assets/zaye.jpg">
+  <meta property="og:image:alt" content="Portrait of Zaye Castillo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zaye Castillo — IT Student &amp; Web Developer">
+  <meta name="twitter:description" content="A cute pink corner of the web by Zaye — BSIT student, web builder, and designer in the making.">
+  <meta name="twitter:image" content="https://schlcastillozaye.github.io/portfolio/assets/zaye.jpg">
+  <link rel="canonical" href="https://schlcastillozaye.github.io/portfolio/">
+
+  <!-- Structured data: the facts, nothing invented -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kashieca Zaye Z. Castillo",
+      "alternateName": "Zaye",
+      "url": "https://schlcastillozaye.github.io/portfolio/",
+      "image": "https://schlcastillozaye.github.io/portfolio/assets/zaye.jpg",
+      "description": "Third-year BSIT student at Bulacan State University exploring web development, software development, and software testing.",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Bulacan State University"
+      },
+      "knowsAbout": [
+        "Web development",
+        "Software development",
+        "Software testing",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "MySQL",
+        "Java",
+        "React",
+        "Flutter"
+      ]
+    }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Set the theme before paint so there is no flash -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('zaye-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+      } catch (error) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Decorative background. Purely visual, hidden from screen readers. -->
+  <div class="backdrop" aria-hidden="true">
+    <span class="blob blob--one"></span>
+    <span class="blob blob--two"></span>
+    <span class="blob blob--three"></span>
+    <span class="backdrop-dots"></span>
+  </div>
+
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="wrap">
+      <nav class="nav glass" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Zaye Castillo — back to home">
+          zaye<span class="brand-mark" aria-hidden="true">✿</span>
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" type="button"
+                aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu">
+          <a class="nav-link is-active" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#education">Education</a>
+          <a class="nav-link" href="#contact">Contact</a>
+
+          <button class="theme-toggle" id="theme-toggle" type="button"
+                  aria-label="Switch to dark theme" aria-pressed="false">
+            <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         HOME / HERO
+         ============================================================ -->
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+
+        <div class="hero-copy">
+          <p class="eyebrow reveal">
+            <span class="eyebrow-flower" aria-hidden="true">✿</span>
+            welcome to my little corner
+          </p>
+
+          <h1 class="reveal" style="--delay: 60ms">
+            Hi, I'm <span class="hero-name">Zaye<svg class="name-underline" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8c30-6 60-6 98-3s60 4 98-2" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span>! An IT student with a thing for <em>design</em> and the little details.
+          </h1>
+
+          <p class="hero-intro reveal" style="--delay: 120ms">
+            I'm <strong>Kashieca Zaye Z. Castillo</strong>, a third-year BSIT student at
+            Bulacan State University. I enjoy creating websites, playing around with layouts
+            and colors, and making ideas look and feel the way I imagined them. I'm still
+            figuring things out as I go, but I like learning by actually making things.
+          </p>
+
+          <div class="hero-actions reveal" style="--delay: 180ms">
+            <a class="btn btn--primary" href="#projects">
+              Explore my projects
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#about">Get to know me</a>
+          </div>
+
+          <ul class="hero-meta reveal" style="--delay: 240ms" aria-label="Quick facts">
+            <li class="meta-chip">
+              <span class="meta-dot" aria-hidden="true"></span>3rd Year BSIT
+            </li>
+            <li class="meta-chip">
+              <span class="meta-dot" aria-hidden="true"></span>CICT · BulSU
+            </li>
+            <li class="meta-chip">
+              <span class="meta-dot" aria-hidden="true"></span>Designer
+            </li>
+          </ul>
+
+          <p class="hero-note reveal" style="--delay: 300ms">
+            <span aria-hidden="true">♡</span> Still learning. Still curious. Always up for a better idea.
+          </p>
+        </div>
+
+        <div class="portrait-scene reveal" style="--delay: 160ms">
+          <div class="portrait-halo" aria-hidden="true"></div>
+
+          <figure class="portrait-wrap">
+            <img class="portrait-img" src="assets/zaye.jpg"
+                 alt="Zaye Castillo smiling in her school uniform"
+                 width="360" height="360" fetchpriority="high">
+            <span class="portrait-fallback" aria-hidden="true">Z</span>
+          </figure>
+
+          <span class="portrait-chip portrait-chip--top glass" aria-hidden="true">designer</span>
+          <span class="portrait-chip portrait-chip--bottom glass" aria-hidden="true">zaye ✿</span>
+
+          <svg class="portrait-flower" viewBox="0 0 64 64" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="32" cy="32" r="4.5"/>
+              <path d="M32 27c-3-8 2-13 6-12 4 1 5 7 1 12"/>
+              <path d="M37 32c8-3 13 2 12 6-1 4-7 5-12 1"/>
+              <path d="M32 37c3 8-2 13-6 12-4-1-5-7-1-12"/>
+              <path d="M27 32c-8 3-13-2-12-6 1-4 7-5 12-1"/>
+            </g>
+          </svg>
+
+          <span class="sparkle sparkle--one" aria-hidden="true">✦</span>
+          <span class="sparkle sparkle--two" aria-hidden="true">✦</span>
+          <span class="sparkle sparkle--three" aria-hidden="true">✧</span>
+        </div>
+
+      </div>
+
+      <!-- Decorative moving ribbon. The same skills appear accessibly below. -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>web development <i>✿</i> software testing <i>✿</i> ui design <i>✿</i> php &amp; mysql <i>✿</i> react <i>✿</i> flutter <i>✿</i> java <i>✿</i> html &amp; css <i>✿</i></span>
+          <span>web development <i>✿</i> software testing <i>✿</i> ui design <i>✿</i> php &amp; mysql <i>✿</i> react <i>✿</i> flutter <i>✿</i> java <i>✿</i> html &amp; css <i>✿</i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+         ============================================================ -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-flower" aria-hidden="true">✿</span>01 — about me</p>
+          <h2>A little more about me.</h2>
+          <p class="section-sub">
+            The person behind the screens, layouts, and occasional overthinking.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-story">
+            <p class="about-lead reveal">
+              Hi, I'm Zaye! I'm a third-year Information Technology student at Bulacan State
+              University, and I spend a lot of time learning new things, working on school
+              projects, and figuring out how to turn the ideas in my head into something real.
+            </p>
+
+            <div class="about-body reveal" style="--delay: 80ms">
+              <p>
+                I'm especially drawn to the design side of things. I enjoy experimenting with
+                layouts, choosing colors, fixing little details, and making interfaces feel
+                cohesive. I can spend a surprising amount of time tweaking something small just
+                because I feel like it could look better.
+              </p>
+              <p>
+                I also enjoy the technical side of it — writing code, figuring out how things
+                work, and solving problems when something doesn't go as planned. I like that I
+                get to be both creative and logical, and that there's always something new to
+                learn.
+              </p>
+              <p>
+                I'm still growing as a designer and developer, so I don't expect myself to know
+                everything yet. I'd rather keep experimenting, improve through my projects, and
+                learn from the things that don't work the first time.
+              </p>
+              <p>
+                For me, the best part is seeing something go from an idea to an actual working
+                project, especially when it looks good and serves a purpose, too.
+              </p>
+              <p class="about-signature">— Zaye <span aria-hidden="true">♡</span></p>
+            </div>
+
+            <blockquote class="about-quote reveal" style="--delay: 140ms">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              I care about the little details, but I'm still learning to trust the bigger picture.
+            </blockquote>
+          </div>
+
+          <aside class="facts-card glass reveal" style="--delay: 120ms" aria-label="Quick facts about me">
+            <div class="facts-head">
+              <span class="facts-flower" aria-hidden="true">✿</span>
+              <h3>the short version</h3>
+            </div>
+            <dl class="facts-list">
+              <div class="fact">
+                <dt>Name</dt>
+                <dd>Kashieca Zaye Z. Castillo</dd>
+              </div>
+              <div class="fact">
+                <dt>Program</dt>
+                <dd>BS Information Technology</dd>
+              </div>
+              <div class="fact">
+                <dt>University</dt>
+                <dd>Bulacan State University</dd>
+              </div>
+              <div class="fact">
+                <dt>College</dt>
+                <dd>College of Information and Communications Technology (CICT)</dd>
+              </div>
+              <div class="fact">
+                <dt>Year level</dt>
+                <dd>3rd Year</dd>
+              </div>
+              <div class="fact">
+                <dt>Focus</dt>
+                <dd>Design &amp; web development</dd>
+              </div>
+            </dl>
+            <p class="facts-foot">
+              <span aria-hidden="true">✦</span> Currently into: web development, visual design &amp; making things look just right.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS
+         ============================================================ -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-flower" aria-hidden="true">✿</span>02 — skills</p>
+          <h2>Tools I've been learning with.</h2>
+          <p class="section-sub">
+            These are the languages, frameworks, and practices I've used in class and in
+            student projects. No percentage bars — just the ground I'm honestly building on.
+          </p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-card glass reveal">
+            <span class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Languages</h3>
+            <p>The languages I reach for in coursework and small builds.</p>
+            <ul class="chips" aria-label="Programming languages">
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>PHP</li>
+            </ul>
+          </article>
+
+          <article class="skill-card glass reveal" style="--delay: 60ms">
+            <span class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M2.5 8.5h19M6 6.3h.01M8.6 6.3h.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Web development</h3>
+            <p>Layouts, styling, and making a page feel nice to use.</p>
+            <ul class="chips" aria-label="Web technologies">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+            </ul>
+          </article>
+
+          <article class="skill-card glass reveal" style="--delay: 120ms">
+            <span class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8.5" ry="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 5.5v6c0 1.7 3.8 3 8.5 3s8.5-1.3 8.5-3v-6M3.5 11.5v6c0 1.7 3.8 3 8.5 3s8.5-1.3 8.5-3v-6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Databases</h3>
+            <p>Storing and connecting the data behind a web system.</p>
+            <ul class="chips" aria-label="Databases">
+              <li>MySQL</li>
+            </ul>
+          </article>
+
+          <article class="skill-card glass reveal" style="--delay: 180ms">
+            <span class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.5 18.5h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Mobile &amp; frameworks</h3>
+            <p>Component-based UI and cross-platform builds I'm getting to know.</p>
+            <ul class="chips" aria-label="Mobile and frameworks">
+              <li>Flutter</li>
+              <li>React</li>
+            </ul>
+          </article>
+
+          <article class="skill-card skill-card--accent glass reveal" style="--delay: 240ms">
+            <span class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2.8 20 6v5.5c0 5-3.4 8.3-8 9.7-4.6-1.4-8-4.7-8-9.7V6l8-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.3 12 2.5 2.5 4.9-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Testing &amp; quality</h3>
+            <p>Checking flows, spotting gaps, and thinking about edge cases.</p>
+            <ul class="chips" aria-label="Testing skills">
+              <li>Software testing</li>
+              <li>Test analysis</li>
+            </ul>
+          </article>
+
+          <article class="skill-card glass reveal" style="--delay: 300ms">
+            <span class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m4 20 .9-4.2L16.3 4.4a2.1 2.1 0 0 1 3 0l.3.3a2.1 2.1 0 0 1 0 3L8.2 19.1 4 20Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m14.5 6.2 3.3 3.3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Design &amp; visual</h3>
+            <p>How I think about color, type, and layout, shaped by my TESDA training.</p>
+            <ul class="chips" aria-label="Design skills">
+              <li>Visual graphic design</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="skills-note reveal">
+          <span aria-hidden="true">✿</span> Still learning · still curious · always adding to the list
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS
+         ============================================================ -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-flower" aria-hidden="true">✿</span>03 — projects</p>
+          <h2>Selected projects.</h2>
+          <p class="section-sub">
+            A mix of systems, websites, and concepts I've built or helped shape as a student.
+            Each one taught me something different.
+          </p>
+        </header>
+
+        <div class="projects-grid">
+
+          <!-- Featured project -->
+          <article class="project-card project-card--featured glass reveal">
+            <div class="project-art project-art--roadwatch" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M42 106 53 22h14l11 84"/>
+                <path d="M60 34v9M60 53v9M60 72v9M60 91v9" stroke-dasharray="2 7"/>
+                <path d="M60 14c-7.7 0-13 5.6-13 13 0 9.8 13 21 13 21s13-11.2 13-21c0-7.4-5.3-13-13-13Z"/>
+                <circle cx="60" cy="27" r="4"/>
+              </svg>
+              <span class="art-dot art-dot--one"></span>
+              <span class="art-dot art-dot--two"></span>
+              <span class="art-label">
+                <span>report</span><i>→</i><span>assign</span><i>→</i><span>repair</span>
+              </span>
+            </div>
+
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-num">01</span>
+                <span class="project-status">Group project</span>
+              </div>
+              <h3>RoadWatch</h3>
+              <p class="project-desc">
+                A road issue reporting and maintenance management system. Citizens report road
+                problems, while administrators and maintenance officers review, assign, and
+                manage repairs.
+              </p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>JavaScript</li>
+                <li>Flutter</li>
+              </ul>
+              <div class="project-footer">
+                <span class="project-role">Role: Test Analyst</span>
+                <button class="text-btn" type="button" data-project="roadwatch">
+                  View details
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-art project-art--kita" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="52" cy="52" r="27"/>
+                <path d="m72 72 18 18"/>
+                <path d="M52 64c-7-4.5-10.5-8-10.5-12.2A5.5 5.5 0 0 1 52 48a5.5 5.5 0 0 1 10.5 3.8C62.5 56 59 59.5 52 64Z"/>
+              </svg>
+            </div>
+            <div class="project-topline">
+              <span class="project-num">02</span>
+              <span class="project-status">System concept</span>
+            </div>
+            <h3>Kita Ko <span class="project-alt">/ BulsuFinds</span></h3>
+            <p class="project-desc">
+              A lost and found management system concept for Bulacan State University — a
+              simpler way to bring lost items back to their people.
+            </p>
+            <ul class="tags" aria-label="Project focus">
+              <li>Campus</li>
+              <li>Lost &amp; found</li>
+            </ul>
+            <div class="project-footer">
+              <button class="text-btn" type="button" data-project="kita">
+                View details
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" style="--delay: 60ms">
+            <div class="project-art project-art--planit" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="22" y="30" width="76" height="68" rx="11"/>
+                <path d="M22 49h76M41 22v15M79 22v15"/>
+                <path d="M39 63h9M57 63h9M75 63h9M39 78h9M57 78h9"/>
+                <path d="M79 88c-5-3-7.5-5.5-7.5-8.4a4 4 0 0 1 7.5-2 4 4 0 0 1 7.5 2c0 2.9-2.5 5.4-7.5 8.4Z"/>
+              </svg>
+            </div>
+            <div class="project-topline">
+              <span class="project-num">03</span>
+              <span class="project-status">System concept</span>
+            </div>
+            <h3>PlanIt BulSU <span class="project-alt">/ Organize</span></h3>
+            <p class="project-desc">
+              An event planning system for the BulSU CICT community, imagined as one calm
+              place to plan, organise, and keep track of events.
+            </p>
+            <ul class="tags" aria-label="Project focus">
+              <li>Events</li>
+              <li>Campus</li>
+            </ul>
+            <div class="project-footer">
+              <button class="text-btn" type="button" data-project="planit">
+                View details
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" style="--delay: 120ms">
+            <div class="project-art project-art--pawntry" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="60" cy="76" rx="19" ry="15"/>
+                <ellipse cx="36" cy="52" rx="8" ry="10" transform="rotate(-22 36 52)"/>
+                <ellipse cx="51" cy="41" rx="8" ry="10"/>
+                <ellipse cx="69" cy="41" rx="8" ry="10"/>
+                <ellipse cx="84" cy="52" rx="8" ry="10" transform="rotate(22 84 52)"/>
+              </svg>
+            </div>
+            <div class="project-topline">
+              <span class="project-num">04</span>
+              <span class="project-status">Website project</span>
+            </div>
+            <h3>Pawntry</h3>
+            <p class="project-desc">
+              A pet food website project — a playful exercise in product presentation, warm
+              visuals, and a friendly browsing experience.
+            </p>
+            <ul class="tags" aria-label="Project focus">
+              <li>Web design</li>
+              <li>Visual design</li>
+            </ul>
+            <div class="project-footer">
+              <button class="text-btn" type="button" data-project="pawntry">
+                View details
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" style="--delay: 180ms">
+            <div class="project-art project-art--enrollment" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 18h38l20 20v64H32Z"/>
+                <path d="M70 18v20h20"/>
+                <path d="M46 54h30M46 66h30M46 78h18"/>
+                <path d="m68 88 6 6 12-14"/>
+              </svg>
+            </div>
+            <div class="project-topline">
+              <span class="project-num">05</span>
+              <span class="project-status">Web system</span>
+            </div>
+            <h3>Enrollment System</h3>
+            <p class="project-desc">
+              A PHP and MySQL enrollment system with AJAX, built to manage student records and
+              updates with smoother, no-reload interactions.
+            </p>
+            <ul class="tags" aria-label="Technologies used">
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>AJAX</li>
+            </ul>
+            <div class="project-footer">
+              <button class="text-btn" type="button" data-project="enrollment">
+                View details
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="projects-note reveal">
+          More projects are in the works — and this page grows with them.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EDUCATION & CERTIFICATIONS
+         ============================================================ -->
+    <section class="section" id="education">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-flower" aria-hidden="true">✿</span>04 — education</p>
+          <h2>Where I'm learning.</h2>
+          <p class="section-sub">
+            Formal classes, extra trainings, and a lot of practice in between.
+          </p>
+        </header>
+
+        <div class="education-grid">
+          <article class="edu-card glass reveal">
+            <div class="edu-top">
+              <span class="edu-seal" aria-hidden="true">BSIT</span>
+              <span class="edu-status">Currently studying</span>
+            </div>
+            <h3>Bachelor of Science in Information Technology</h3>
+            <p class="edu-school">Bulacan State University</p>
+            <p class="edu-college">College of Information and Communications Technology (CICT)</p>
+            <p class="edu-year">3rd Year</p>
+            <div class="edu-focus">
+              <h4>What I'm exploring</h4>
+              <ul>
+                <li>Web development</li>
+                <li>Software development</li>
+                <li>Software testing</li>
+                <li>Visual design</li>
+              </ul>
+            </div>
+            <p class="edu-quote">Learning the technical side, keeping the creative side close.</p>
+          </article>
+
+          <div class="cert-panel">
+            <div class="cert-head reveal">
+              <h3>Trainings &amp; certifications</h3>
+              <p>A few programs and courses I've completed along the way.</p>
+            </div>
+
+            <ul class="cert-list">
+              <li class="cert-card glass reveal">
+                <span class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .8-7.9A5.5 5.5 0 0 0 7.3 8.6 4.7 4.7 0 0 0 7 18Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <h4>Salesforce Training</h4>
+                  <p>Salesforce · Training</p>
+                </div>
+              </li>
+
+              <li class="cert-card glass reveal" style="--delay: 50ms">
+                <span class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m4 20 .9-4.2L16.3 4.4a2.1 2.1 0 0 1 3 0l.3.3a2.1 2.1 0 0 1 0 3L8.2 19.1 4 20Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m14.5 6.2 3.3 3.3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+                </span>
+                <div>
+                  <h4>Visual Graphic Design NC III</h4>
+                  <p>TESDA · Certificate</p>
+                </div>
+              </li>
+
+              <li class="cert-card glass reveal" style="--delay: 100ms">
+                <span class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2.8c3.2 0 5.8 2.6 5.8 5.8 0 4.3-5.8 12.6-5.8 12.6S6.2 12.9 6.2 8.6C6.2 5.4 8.8 2.8 12 2.8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="8.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+                </span>
+                <div>
+                  <h4>Agent Blazer</h4>
+                  <p>Salesforce · Training</p>
+                </div>
+              </li>
+
+              <li class="cert-card glass reveal" style="--delay: 150ms">
+                <span class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <h4>HTML5 &amp; CSS3 Complete Course</h4>
+                  <p>Udemy · Course</p>
+                </div>
+              </li>
+
+              <li class="cert-card glass reveal" style="--delay: 200ms">
+                <span class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M2.5 8.5h19M6 6.3h.01M8.6 6.3h.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </span>
+                <div>
+                  <h4>Web Design: Beginner to Advanced</h4>
+                  <p>Udemy · Course</p>
+                </div>
+              </li>
+
+              <li class="cert-card cert-card--note reveal" style="--delay: 250ms">
+                <span class="cert-flower" aria-hidden="true">✿</span>
+                <p>Always learning —<br>the next one is on its way.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section class="section section--contact" id="contact">
+      <div class="wrap">
+        <div class="contact-card glass reveal">
+          <div class="contact-copy">
+            <p class="eyebrow"><span class="eyebrow-flower" aria-hidden="true">✿</span>05 — say hello</p>
+            <h2>Let's make something<br><em>a little lovely.</em></h2>
+            <p>
+              I'm always happy to talk about web design, testing, or the small details that
+              make a project better. I haven't added an email or contact form yet — this is a
+              static site with no backend — so GitHub is the best way to reach me for now.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn--primary" href="https://github.com/schlcastillozaye" target="_blank" rel="noopener noreferrer">
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" fill="currentColor"/></svg>
+                Find me on GitHub
+              </a>
+              <a class="btn btn--ghost" href="#projects">See my projects</a>
+            </div>
+            <p class="contact-note">
+              <span aria-hidden="true">♡</span> More links will be added as they're ready.
+            </p>
+          </div>
+
+          <aside class="contact-panel glass" aria-label="GitHub profile">
+            <span class="contact-panel-flower" aria-hidden="true">✿</span>
+            <p class="contact-panel-label">Find me online</p>
+            <a class="contact-github" href="https://github.com/schlcastillozaye" target="_blank" rel="noopener noreferrer">
+              <span class="contact-github-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" fill="currentColor"/></svg>
+              </span>
+              <span class="contact-github-text">
+                <strong>@schlcastillozaye</strong>
+                <small>Code, class projects &amp; things I'm building</small>
+              </span>
+              <svg class="contact-github-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="contact-panel-rule" aria-hidden="true"></div>
+            <p class="contact-panel-foot">
+              <span aria-hidden="true">✿</span> Made with curiosity, care, and a lot of pink.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Kashieca Zaye Z. Castillo</p>
+      <p class="footer-note">Built by hand with HTML, CSS &amp; a lot of pink.</p>
+      <a class="footer-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <button class="to-top glass" id="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <!-- ============================================================
+       PROJECT DETAILS
+       Everything inside this hidden block is only shown in the
+       modal. To add a repository or live demo link, replace the
+       "coming soon" line in the matching project-detail block
+       with a normal <a> tag. See README.md for an example.
+       ============================================================ -->
+  <div class="project-data" hidden>
+    <article class="project-detail" id="details-roadwatch"
+             data-title="RoadWatch" data-tags="PHP · MySQL · JavaScript · Flutter">
+      <div class="detail-body">
+        <h4>What it does</h4>
+        <p>
+          RoadWatch is a road issue reporting and maintenance management system. Citizens can
+          report road problems, while administrators and maintenance officers review the
+          reports, assign work, and keep track of repairs.
+        </p>
+        <h4>My part</h4>
+        <p>
+          I worked on this as part of a BSIT group project at Bulacan State University, with a
+          focus on testing. My role was to look at the different user flows, check that things
+          behaved as expected, and help spot issues along the way.
+        </p>
+        <h4>Built with</h4>
+        <p>PHP, MySQL, JavaScript, and Flutter — with a web app and a mobile app sharing one backend.</p>
+        <div class="detail-links">
+          <a class="btn btn--primary btn--small" href="https://github.com/schlcastillozaye/RoadWatchCodeBlocks" target="_blank" rel="noopener noreferrer">
+            View repository
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-detail" id="details-kita"
+             data-title="Kita Ko / BulsuFinds" data-tags="System concept · Campus">
+      <div class="detail-body">
+        <h4>What it does</h4>
+        <p>
+          A lost and found management system concept for Bulacan State University. The idea is
+          to give students one clear place to report lost or found items and help get them back
+          to their owners.
+        </p>
+        <h4>The thinking behind it</h4>
+        <p>
+          Campus lost and found works best when reporting is quick and searching is simple. This
+          concept was shaped around that idea, with a clean flow for posting items and browsing
+          what others have found.
+        </p>
+        <h4>Status</h4>
+        <p>A concept project. The technology stack hasn't been finalised yet.</p>
+        <div class="detail-links">
+          <span class="detail-soon">Repository link coming soon</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-detail" id="details-planit"
+             data-title="PlanIt BulSU / Organize" data-tags="System concept · Events">
+      <div class="detail-body">
+        <h4>What it does</h4>
+        <p>
+          An event planning system for the BulSU CICT community. The concept brings event
+          details, planning, and tracking into one place so students and organisers can stay on
+          the same page.
+        </p>
+        <h4>The thinking behind it</h4>
+        <p>
+          Campus events involve a lot of moving parts. This concept focuses on keeping
+          information clear and easy to find, from the first plan to the final schedule.
+        </p>
+        <h4>Status</h4>
+        <p>A concept project. The technology stack hasn't been finalised yet.</p>
+        <div class="detail-links">
+          <span class="detail-soon">Repository link coming soon</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-detail" id="details-pawntry"
+             data-title="Pawntry" data-tags="Website project · Visual design">
+      <div class="detail-body">
+        <h4>What it does</h4>
+        <p>
+          A pet food website project built around a friendly, easy-to-browse experience. It's a
+          place to show products clearly and make the brand feel warm rather than clinical.
+        </p>
+        <h4>What I practised</h4>
+        <p>
+          Product presentation, visual hierarchy, and a soft color direction — the kind of
+          details that make a simple website feel considered.
+        </p>
+        <h4>Status</h4>
+        <p>A website project. More details and links can be added here as it develops.</p>
+        <div class="detail-links">
+          <span class="detail-soon">Live link coming soon</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-detail" id="details-enrollment"
+             data-title="Enrollment System" data-tags="PHP · MySQL · AJAX">
+      <div class="detail-body">
+        <h4>What it does</h4>
+        <p>
+          A PHP and MySQL-based enrollment system for managing student records. AJAX is used so
+          parts of the page can update without reloading the whole thing.
+        </p>
+        <h4>What I practised</h4>
+        <p>
+          Connecting a front end to a MySQL database, handling records with PHP, and using AJAX
+          to make common actions feel smoother.
+        </p>
+        <h4>Built with</h4>
+        <p>PHP, MySQL, AJAX, and JavaScript.</p>
+        <div class="detail-links">
+          <span class="detail-soon">Repository link coming soon</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============================================================
+       PROJECT MODAL
+       ============================================================ -->
+  <dialog class="modal" id="project-dialog" aria-labelledby="modal-title">
+    <div class="modal-inner">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close project details">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <p class="modal-eyebrow">project details</p>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <p class="modal-tags" id="modal-tags"></p>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </dialog>
+
+</body>
+</html>
